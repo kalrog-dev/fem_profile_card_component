@@ -14,16 +14,29 @@
   --ff: "Kumbh Sans", sans-serif;
 }
 
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 /* General */
 body {
   font-family: var(--ff);
+  font-size: 0.875rem;
+  color: hsl(227, 10%, 46%);
   background-color: hsl(185, 75%, 39%);
+  line-height: 1.5;
+  overflow: hidden;
 } 
 
 main {
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 img {
@@ -40,11 +53,29 @@ img {
 }
 
 /* Typography */
+.card__name,
+.card__social-number {
+  font-size: 1.125rem;
+  color: hsl(229, 23%, 23%);
+}
+
+.card__age {
+  font-size: 1.125rem;
+  color: hsl(227, 10%, 46%);
+}
+
+.card__social-category {
+  font-size: 0.625rem;
+  letter-spacing: 1.5px;
+}
+
 /* Layout */
 .card {
   flex-direction: column;
   align-items: center;
   width: 87%;
+  max-width: 350px;
+  min-width: 264px;
   border-radius: 15px;
   background-color: #fff;
 }
@@ -53,15 +84,65 @@ img {
   border-radius: 15px 15px 0 0;
 }
 
+.card__content {
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 .card__image {
+  position: relative;
+  top: -53px;
+  border: 5px solid #fff;
   border-radius: 50%;
-  width: 96px;
+  width: 106px;
+}
+
+.card__personal-info {
+  margin-block: -2.75em 0.5em;
+  gap: 0.5em;
+}
+
+.card__town {
+  padding-bottom: 2em;
 }
 
 .card__stats {
   justify-content: center;
-  gap: 2em;
+  align-self: stretch;
+  gap: 3.75em;
   text-align: center;
+  padding-block: 1.7em;
+  border-top: 1px solid hsl(225, 10%, 92%);
+}
+
+.bg-pattern-top,
+.bg-pattern-bottom {
+  position: absolute;
+  content: "";
+  width: 110vw;
+  max-width: unset;
+  height: 125vw;
+  z-index: -1;
+  opacity: 0.75;
+}
+
+.bg-pattern-top {
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -75%);
+  
+}
+
+.bg-pattern-bottom {
+  bottom: 0;
+  right: 0;
+  transform: translate(50%, 75%);
 }
 
 /* Media queries */
+@media (min-width: 40em) {
+  .card__stats {
+    padding-top: 1em;
+  }
+}
