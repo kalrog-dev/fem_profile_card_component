@@ -1,0 +1,67 @@
+@font-face {
+  font-family: "Kumbh Sans";
+  font-weight: 400;
+  src: url(./fonts/KumbhSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Kumbh Sans";
+  font-weight: 700;
+  src: url(./fonts/KumbhSans-Bold.ttf);
+}
+
+:root {
+  --ff: "Kumbh Sans", sans-serif;
+}
+
+/* General */
+body {
+  font-family: var(--ff);
+  background-color: hsl(185, 75%, 39%);
+} 
+
+main {
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+/* Typography */
+/* Layout */
+.card {
+  flex-direction: column;
+  align-items: center;
+  width: 87%;
+  border-radius: 15px;
+  background-color: #fff;
+}
+
+.card__bg-pattern-card {
+  border-radius: 15px 15px 0 0;
+}
+
+.card__image {
+  border-radius: 50%;
+  width: 96px;
+}
+
+.card__stats {
+  justify-content: center;
+  gap: 2em;
+  text-align: center;
+}
+
+/* Media queries */
